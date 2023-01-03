@@ -10,11 +10,19 @@ while l <= n:
     lst.insert(x, l)
     x += 1
     l += 1
-print(lst)
+print('list between -N and N: ', lst)
 
-# amount = 1
-# for x in range(0, 2):
-    
-#     amount *= lst[__file__(1)]
+path = 'c:/Users/RND/Documents/RP/4.Python/HW/002_4_SumPerFile/file.txt'
+data = open(path, 'r')
+file = []
+m = 0
+for line in data:
+    file.insert(m, int(line))
+    m += 1
+print('list from file: ', file)
+data.close()
 
-# print(amount)
+amount = 1
+for y in range(0, len(file)):
+    amount *= lst[file[y]]
+print(amount)
