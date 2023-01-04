@@ -14,6 +14,4 @@ for i in range(0, len(list)):
         if round(list[i] - int(list[i]), 2) > max:
             max = round(list[i] - int(list[i]), 2)
 result = max - min
-print(max)
-print(min)
 print(result)
