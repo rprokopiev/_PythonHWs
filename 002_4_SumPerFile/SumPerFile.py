@@ -22,6 +22,10 @@ while l <= n:
     x += 1
     l += 1
 print('list between -N and N: ', lst)
+# ВМЕСТО 16-24:
+    # lst = [i for i in range(-n,n+1)]
+    # print('list between -N and N: ', lst)
+
 
 amount = 1
 for y in range(0, len(file)):
