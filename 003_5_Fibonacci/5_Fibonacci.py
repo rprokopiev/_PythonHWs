@@ -1,5 +1,21 @@
 # Составьте список чисел Фибоначчи, в том числе для отрицательных индексов.
 
+def positive_fib(num):
+    positive_list = [1,1]
+    for i in range(num-2):
+        positive_list.append(positive_list[-2]+positive_list[-1])
+    return positive_list
+
+def negative_fib(num):
+    negative_list = [0,1]
+    for i in range(num-1):
+        negative_list.append(negative_list[-2]-negative_list[-1])
+    return negative_list[::-1]
+
+print(negative_fib(8) + positive_fib(8))
+
+exit()
+# МОЁ
 def Fibonacci(n):
     if n == 0:
         return 0
@@ -25,3 +41,4 @@ def GetListNegPosFibNumb(n):
 n = -10
 lst = GetListNegPosFibNumb(n)
 print(lst)
+ 

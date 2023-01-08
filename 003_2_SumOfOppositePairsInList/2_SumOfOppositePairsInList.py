@@ -20,3 +20,10 @@ list = [5, 1, 3, 13, 6]
 print(list)
 list_sums = sumListNumbersOppositeIndx(list)
 print(list_sums)
+
+# othe
+multy = []
+middle = len(list)//2 + len(list)%2
+for i in range(middle):
+    multy.append(list[i]*list[-i-1])
+print(multy)

@@ -24,3 +24,8 @@ def sumListNumbersOnOddIndx(lst):      # найти сумму элементо�
 list = getRandIntListUserSettings()
 print(list)
 print(sumListNumbersOnOddIndx(list))
+
+# задать случайный список проще
+# list_num = [randint(0,100) for i in range(randint(5,10))]
+#            цифры от 0 -100            в список из 5-10 эл-ов
+
