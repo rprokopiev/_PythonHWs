@@ -6,6 +6,31 @@ import random
 
 k = int(input('Введите K \n'))
 
+# РАЗБОР
+result = ''
+for i in range(k, -1,-1):
+    koef = random.randint(0,100)
+    if koef ==0:
+        continue
+    if i == 1:
+        if koef>1:
+            result += f'{koef}*x*'
+        if koef == 1:
+            result += f'x'
+    if i > 1:
+        if koef>1:
+            result += f'{koef}*x**{i}'
+        if koef == 1:
+            result += f'x**{i}'
+    if i == 0:
+        if koef>1:
+            result += f'{koef}'
+        if koef == 1:
+            result += f'1'
+
+print(result[:-1]+' = 0')
+exit()
+# МОЁ
 path = 'c:/Users/RND/Documents/RP/4.Python/HW/004_4_WritePolynominalToFile/file4.txt'
 data = open(path, 'w')
 

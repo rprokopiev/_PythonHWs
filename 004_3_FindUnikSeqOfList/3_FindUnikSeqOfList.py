@@ -4,6 +4,13 @@
 n = [2, 2, 3, 4, 4, 5, 5, 3, 0]
 n_unique = []
 
+# РАЗБОР
+for i in n:
+    if n.count(i) == 1:
+        n_unique.append(i)
+print(n_unique)
+
+exit()
 for i in range(0, len(n)):
     l = 0
     for j in range(0, len(n)):

@@ -8,3 +8,7 @@ d = 0
 for i in range(2,len(a)):
     d += 1
 print(round(math.pi,d))
+
+# РАЗБОР
+lgth = a.split('.')[1]
+print(round(math.pi,len(lgth)))
