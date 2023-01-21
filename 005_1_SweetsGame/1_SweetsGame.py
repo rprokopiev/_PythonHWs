@@ -1,12 +1,9 @@
-# Создайте программу для игры с конфетами человек против человека.
-# Реализовать игру игрока против игрока в терминале.
-# Игроки ходят друг за другом, вписывая желаемое количество конфет.
-# Первый ход определяется жеребьёвкой. В конце вывести игрока, который победил
+# Создайте программу для игры с конфетами
 
 import random
 
 import os
-
+# ф-ия получение нужного числа от игрока
 def GetNumb(x, turnMax):
     if x > turnMax:
         a = input('Введите число от 1 до 28 \n')
@@ -19,12 +16,14 @@ def GetNumb(x, turnMax):
             a = input(f'Введите число от 1 до {x} \n')
         return int(a)
 
+# ф-ия выбора режима игры
 def ModeSelection():
     a = input('выбор режима: \n1 - два игрока \n2 - игрок - компьютер лёгкий \n3 - игрок - компьютер профи\n')
     while int(a) not in range(1, 4):
         a = input('выбор режима: \n1 - два игрока \n2 - игрок - компьютер \n3 - игрок - компьютер профи\n')
     return int(a)
 
+# ф-ия режима игры человек против бота, бот берёт случайное кол-во
 def Mode_UserVsEasyBot(SweetsQty, User1, turnMax, turnMin):
     print((lambda x: "игрок ходит первым" if x ==
            1 else "компьютер ходит первым")(User1))
@@ -53,6 +52,7 @@ def Mode_UserVsEasyBot(SweetsQty, User1, turnMax, turnMin):
     else:
         return print('Победил компьютер\nКОНЕЦ')
 
+# ф-ия режима игры человек против человека
 def Mode_UserVsUser(SweetsQty, User1, turnMax):
     print((lambda x: "1й игрок ходит первым" if x ==
            1 else "2й игрок ходит первым")(User1))
@@ -75,10 +75,15 @@ def Mode_UserVsUser(SweetsQty, User1, turnMax):
     else:
         print('Победил 2й игрок\nКОНЕЦ')
 
+# ф-ия исп-ся в режиме игры с "умным" ботом, если первым ходит игрок
+# возращает либо случайное число, либо число требуемое для выигрышного алгоритма.
 def intDivision(x, y):
-    if x%y == 0: return (y//2)
+    if x%y == 0: 
+        if x <= (y-1): return random.randint(1, x)
+        else: return random.randint(1, y-1)
     else: return x%y
 
+# ф-ия режима игры человек против "умного" бота (выигрышный алгоритм)
 def Mode_UserVsHardBot(SweetsQty, User1, turnMax, turnSum):
     os.system('cls')
     print((lambda x: "игрок ходит первым" if x ==
@@ -136,7 +141,7 @@ SweetsQty = 221
 turnMax = 28
 turnMin = 1
 turnSum = turnMin + turnMax
-User1 = bool(random.randint(False, True))
+User1 = bool(random.randint(False, True)) # очерёдность хода
 select = ModeSelection()
 if select == 1:
     Mode_UserVsUser(SweetsQty, User1, turnMax)
