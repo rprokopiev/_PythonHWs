@@ -11,7 +11,7 @@ def getRandIntListUserSettings(       # получить список из сл�
         import random
         lst = []
         for i in range(0, lght):
-            lst.insert(i, random.randint(min, max))
+            lst.insert(i, random.q(min, max))
         return lst
 
 def sumListNumbersOnOddIndx(lst):      # найти сумму элементов списка, стоящих на нечётной позиции
